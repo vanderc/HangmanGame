@@ -35,21 +35,23 @@ int main() {
 
     while (incorrectAttempts < maxAttempts) {
         cout << "\nCurrent word: ";
-        displayWord(word, guesses);
+        displayWord(word, guesses);  // Display the current state of the word
         cout << "Incorrect attempts left: " << (maxAttempts - incorrectAttempts) << endl;
 
-        char guess;
+        char guess; // Variable to hold the player's guess
         cout << "Guess a letter: ";
-        cin >> guess;
+        cin >> guess; // Read the player's guess
         guess = tolower(guess); // Convert to lowercase for consistency
 
+        // Check if the letter has already been guessed
         if (find(guesses.begin(), guesses.end(), guess) != guesses.end()) {
             cout << "You already guessed that letter." << endl;
             continue;
         }
 
-        guesses.push_back(guess);
+        guesses.push_back(guess); // Add guesses to a list
 
+        // Check if guess is correct
         if (word.find(guess) == string::npos) {
             incorrectAttempts++;
             cout << "Incorrect guess!" << endl;
@@ -57,12 +59,14 @@ int main() {
             cout << "Good guess!" << endl;
         }
 
+        // Check if correct word was guessed
         if (isWordGuessed(word, guesses)) {
             cout << "Congratulations! You've guessed the word: " << word << endl;
             break;
         }
     }
 
+    // Check if attempts ran out
     if (incorrectAttempts == maxAttempts) {
         cout << "Game over! The word was: " << word << endl;
     }
