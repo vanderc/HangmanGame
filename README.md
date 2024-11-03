@@ -15,8 +15,6 @@ I made this program to demonstrate my knowledge of C++. This code is for a hangm
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
 
 - I could make it so the word that is used comes from a list and is randomly chosen. 
 - I could make it so it repeats so you can play it multiple times. 
-- 
